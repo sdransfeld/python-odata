@@ -16,7 +16,7 @@ import datetime
 import uuid
 import decimal
 
-from enum import Enum
+from enum import IntEnum
 
 from odata.entity import EntityBase
 from odata.property import StringProperty, IntegerProperty, NavigationProperty, DatetimeProperty, DecimalProperty, FloatProperty, BooleanProperty, UUIDProperty

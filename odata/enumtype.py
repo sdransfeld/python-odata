@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from enum import Enum
+from enum import IntEnum
 
 from odata.property import PropertyBase
 
 
-class EnumType(Enum):
+class EnumType(IntEnum):
     pass
 
 
@@ -23,7 +23,7 @@ class EnumTypeProperty(PropertyBase):
 
     def escape_value(self, value):
         if self.enum_class.__module__:
-            return f"Microsoft.Dynamics.DataEntities.{self.enum_class.__name__}'{value.name}'"
+            return f"{self.enum_class.__module__}.{self.enum_class.__name__}'{value.name}'"
         return f"{self.enum_class.__name__}'{value.name}'"
 
     def serialize(self, value):
